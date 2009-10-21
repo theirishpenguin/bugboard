@@ -1,0 +1,38 @@
+<p>
+  <b>Title:</b>
+  <%=h @bug.title %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @bug.project %>
+</p>
+
+<p>
+  <b>Project homepage:</b>
+  <%=h @bug.project_homepage %>
+</p>
+
+<p>
+  <b>Programming language:</b>
+  <%=h @bug.programming_language %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%=h @bug.assigned_to %>
+</p>
+
+<p>
+  <b>Bug report url:</b>
+  <%=h @bug.bug_report_url %>
+</p>
+
+<p>
+  <b>Bug bucket:</b>
+  <%=h @bug.bucket %>
+</p>
+
+
+<%= link_to 'Edit', edit_bug_path(@bug) %> |
+Return to

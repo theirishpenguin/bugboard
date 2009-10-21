@@ -1,0 +1,39 @@
+<h1>New bug</h1>
+
+<% form_for(@bug) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :project %><br />
+    <%= f.text_field :project %>
+  </p>
+  <p>
+    <%= f.label :project_homepage %><br />
+    <%= f.text_field :project_homepage %>
+  </p>
+  <p>
+    <%= f.label :programming_language %><br />
+    <%= f.text_field :programming_language %>
+  </p>
+  <p>
+    <%= f.label :assigned_to %><br />
+    <%= f.text_field :assigned_to %>
+  </p>
+  <p>
+    <%= f.label :bug_report_url %><br />
+    <%= f.text_field :bug_report_url %>
+  </p>
+  <p>
+    <%= f.label 'Bug Bucket (Proposed, Assigned, Completed)' %><br />
+    <%= f.text_field :bucket %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+Return to

@@ -1,0 +1,6 @@
+What is bugboard.org?
+---------------------
+Ever turn up to a code sprint/bug jam only to find you have nothing to jam on? Well, bugboard.org is here to help with that. Before the big day of the event, you can scour the bug tracking archives for bugs that would be good to work on and add them to the bucket of 'Proposed' bugs (a bucket is just a list of bugs - can be Proposed, Assigned or Completed). Then, on the day, simply let the good folks that turn up to your bug jam (or yourself) choose what bugs to work on - it's as simple as assigning the bug to the person by editing the bug. The overall aim is to get things into the completed bucket, though truth be told the real aim is to have fun! You probably don't need a bucket to tell you how to do this :-)
+
+Required gems
+* Rails 2.3.2

@@ -1,0 +1,49 @@
+<p>
+<b>What is bugboard.org?</b> Ever turn up to a code sprint/bug jam only to find you have nothing to jam on? Well, bugboard.org is here to help with that. Before the big day of the event, you can scour the bug tracking archives for bugs that would be good to work on and add them to the bucket of 'Proposed' bugs (a bucket is just a list of bugs - can be Proposed, Assigned or Completed). Then, on the day, simply let the good folks that turn up to your bug jam (or yourself) choose what bugs to work on - it's as simple as 'assigning' the bug to the person by editing the bug. The overall aim is to get things into the 'completed' bucket, though truth be told the real aim is to have fun! You probably don't need a bucket to tell you how to do this :-) For more info check out our <a href="/faq.html">Frequently Asked Questions</a>.
+</p>
+
+<h1>
+<%=
+case params['action']
+when 'proposed_bugs'
+  "Bugs no one's yet working on..."
+when 'assigned_bugs', 'index'
+  "Bugs people are working on..."
+when 'completed_bugs'
+  "Bugs that have been completed..."
+end
+%>
+</h1>
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Project</th><b>
+    <th>Project homepage</th>
+    <th>Programming language</th>
+    <th>Assigned to</th>
+    <th>Bug bucket</th>
+    <th>Bug report url</th>
+  </tr>
+
+<% @bugs.each do |bug| %>
+  <tr>
+    <td class='boxed_td'><%=h bug.title %></td>
+    <td class='boxed_td'><%=h bug.project %></td>
+    <td class='boxed_td'><%=h bug.project_homepage %></td>
+    <td class='boxed_td'><%=h bug.programming_language %></td>
+    <td class='boxed_td'><%=h bug.assigned_to %></td>
+    <td class='boxed_td'><%=h bug.bucket %></td>
+    <td class='boxed_td'><%=h bug.bug_report_url %></td>
+    <td><%= link_to 'Show', bug %></td>
+    <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+    <td><%= link_to 'Destroy', bug, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= "No bugs here boss!" if @bugs.empty? %></p>
+<br />
+
+<%= link_to 'New bug', new_bug_path %>
